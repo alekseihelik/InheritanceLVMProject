@@ -12,12 +12,15 @@ public class HardDrives {
         this.name = name;
         this.size = size;
         uuid = (UUID.randomUUID()).toString();
-        drives.add(name + "[" + size + "]" + "[" + uuid + "]");
     }
-    
+
     public static void getDrives(){
         for(int i=0;i<drives.size();i++){
             System.out.println(drives.get(i));
         }
+    }
+
+    public void addDrive(){
+        drives.add(name + "[" + size + "]" + "[" + uuid + "]");
     }
 }

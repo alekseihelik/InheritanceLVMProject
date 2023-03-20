@@ -10,8 +10,9 @@ public class Main {
             cmd = s.nextLine();
             if(cmd.contains("install-drive")){
                 String[] split = cmd.split(" ");
-                new HardDrives(split[1], split[2]);
-                System.out.println("Drive " + split[1] + "installed");
+                HardDrives drive = new HardDrives(split[1], split[2]);
+                System.out.println("Drive " + split[1] + " installed");
+                drive.addDrive();
             }
             if(cmd.contains("list-drives")){
                 HardDrives.getDrives();
