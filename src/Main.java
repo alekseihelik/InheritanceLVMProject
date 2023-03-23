@@ -11,6 +11,14 @@ public class Main {
             if(cmd.contains("install-drive")){
                 String[] split = cmd.split(" ");
                 HardDrives drive = new HardDrives(split[1], split[2]);
+                while(drive.isMade()){
+                    System.out.println("This hard drive has already been installed.");
+                    System.out.print("Install a new hard drive: ");
+
+                    cmd=s.nextLine();
+                    split = cmd.split(" ");
+                    drive = new HardDrives(split[1], split[2]);
+                }
                 System.out.println("Drive " + split[1] + " installed");
                 drive.addDrive();
             }

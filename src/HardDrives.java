@@ -3,7 +3,7 @@ import java.util.UUID;
 
 public class HardDrives {
 
-    private static ArrayList<String> drives;
+    private static ArrayList<String> drives = new ArrayList<String>();
     private String uuid;
     private String name;
     private String size;
@@ -21,6 +21,27 @@ public class HardDrives {
     }
 
     public void addDrive(){
-        drives.add(name + "[" + size + "]" + "[" + uuid + "]");
+        drives.add(getName() + "[" + getSize() + "]" + "[" + getUuid() + "]");
+    }
+
+    public boolean isMade(){
+        for(int i=0;i<drives.size();i++){
+            if(getName().equals(drives.get(i).substring(0, drives.get(i).indexOf("[")))){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSize() {
+        return size;
     }
 }

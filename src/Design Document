@@ -1,0 +1,26 @@
+HardDrives {
+    private static ArrayList<String> drives = new ArrayList<String>();
+    private String uuid;
+    private String name;
+    private String size;
+
+    public HardDrives(String name, String size) - constructs a hard drive based on the parameters and instantiates the uuid to a random UUID
+
+    public static void getDrives() - prints out the hard drives in proper format line by line
+    public void addDrive() - adds drives to the array list in proper format
+    public boolean isMade() - checks whether or not the hard drive inputted by the user has already been made
+
+    public String getUuid() - getter methods for the variables
+    public String getName()
+    public String getSize()
+}
+
+
+PhysicalVolumes {
+}
+
+VolumeGroups {
+}
+
+LogicalVolumes {
+}
