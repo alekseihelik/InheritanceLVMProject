@@ -32,7 +32,7 @@ public class HardDrives extends Data{
     }
 
     public int getSize() {
-        return size;
+        return size ;
     }
 
     public String getUnit() {

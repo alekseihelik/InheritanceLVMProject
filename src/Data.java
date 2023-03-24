@@ -9,7 +9,7 @@ public class Data {
      uuid = UUID.randomUUID();
     }
 
-    public UUID getUuid() {
+    public UUID getUuid()  {
         return uuid;
     }
 

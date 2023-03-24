@@ -9,7 +9,7 @@ public class PhysicalVolumes extends Data{
         size = hardDrive.getSize();
     }
 
-    public int getSize() {
+    public int getSize()  {
         return size;
     }
 

@@ -9,7 +9,7 @@ public class VolumeGroups extends Data{
         pvs.add(pv);
     }
 
-    public ArrayList<PhysicalVolumes> getPvs() {
+    public ArrayList<PhysicalVolumes> getPvs()  {
         return pvs;
     }
 
