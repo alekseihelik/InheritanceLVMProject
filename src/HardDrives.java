@@ -1,17 +1,15 @@
 import java.util.ArrayList;
-import java.util.UUID;
 
-public class HardDrives {
+public class HardDrives extends Data{
 
     private static ArrayList<String> drives = new ArrayList<String>();
-    private String uuid;
-    private String name;
-    private String size;
+    private int size;
+    private String unit;
 
     public HardDrives(String name, String size){
-        this.name = name;
-        this.size = size;
-        uuid = (UUID.randomUUID()).toString();
+        super(name);
+        this.size = Integer.parseInt(size.substring(0,size.length()-1));
+        unit = size.substring(size.length()-1);
     }
 
     public static void getDrives(){
@@ -21,27 +19,23 @@ public class HardDrives {
     }
 
     public void addDrive(){
-        drives.add(getName() + "[" + getSize() + "]" + "[" + getUuid() + "]");
+        drives.add(super.getName() + "[" + getSize() + getUnit() + "]" + "[" + super.getUuid() + "]");
     }
 
     public boolean isMade(){
         for(int i=0;i<drives.size();i++){
-            if(getName().equals(drives.get(i).substring(0, drives.get(i).indexOf("[")))){
+            if(super.getName().equals(drives.get(i).substring(0, drives.get(i).indexOf("[")))){
                 return true;
             }
         }
         return false;
     }
 
-    public String getUuid() {
-        return uuid;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getSize() {
+    public int getSize() {
         return size;
+    }
+
+    public String getUnit() {
+        return unit;
     }
 }
