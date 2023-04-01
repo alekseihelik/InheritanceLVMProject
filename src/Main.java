@@ -5,26 +5,6 @@ public class Main {
 
         System.out.println("Welcome to the LVM system.");
         String cmd = "";
-        while(!(cmd.equalsIgnoreCase("exit"))){
-            System.out.print("cmd#: ");
-            cmd = s.nextLine();
-            if(cmd.contains("install-drive")){
-                String[] split = cmd.split(" ");
-                HardDrives drive = new HardDrives(split[1], split[2]);
-                while(drive.isMade()){
-                    System.out.println("This hard drive has already been installed.");
-                    System.out.print("Install a new hard drive: ");
 
-                    cmd=s.nextLine();
-                    split = cmd.split(" ");
-                    drive = new HardDrives(split[1], split[2]);
-                }
-                System.out.println("Drive " + split[1] + " installed");
-                drive.addDrive();
-            }
-            if(cmd.contains("list-drives")){
-                HardDrives.getDrives();
-            }
-        }
     }
 }

@@ -4,12 +4,10 @@ public class HardDrives extends Data{
 
     private static ArrayList<String> drives = new ArrayList<String>();
     private int size;
-    private String unit;
 
     public HardDrives(String name, String size){
         super(name);
-        this.size = Integer.parseInt(size.substring(0,size.length()-1));
-        unit = size.substring(size.length()-1);
+        this.size = Integer.parseInt(size.substring(0,size.length()));
     }
 
     public static void getDrives(){
@@ -18,24 +16,12 @@ public class HardDrives extends Data{
         }
     }
 
-    public void addDrive(){
-        drives.add(super.getName() + "[" + getSize() + getUnit() + "]" + "[" + super.getUuid() + "]");
-    }
-
-    public boolean isMade(){
-        for(int i=0;i<drives.size();i++){
-            if(super.getName().equals(drives.get(i).substring(0, drives.get(i).indexOf("[")))){
-                return true;
-            }
-        }
-        return false;
+    public String toString(){
+        return super.getName() + "[" + getSize() + "]" + "[" + super.getUuid() + "]";
     }
 
     public int getSize() {
         return size ;
     }
 
-    public String getUnit() {
-        return unit;
-    }
 }

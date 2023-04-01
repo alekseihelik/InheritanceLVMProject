@@ -18,6 +18,6 @@ public class PhysicalVolumes extends Data{
     }
 
     public String toString(){
-        return super.getName() + ": [" + size + hardDrive.getUnit() + "] [" + super.getUuid() + "]";
+        return super.getName() + ": [" + size + "] [" + super.getUuid() + "]";
     }
 }
