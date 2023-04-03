@@ -1,26 +1,38 @@
-HardDrives {
-    private static ArrayList<String> drives = new ArrayList<String>();
-    private String uuid;
-    private String name;
-    private String size;
-
-    public HardDrives(String name, String size) - constructs a hard drive based on the parameters and instantiates the uuid to a random UUID
-
-    public static void getDrives() - prints out the hard drives in proper format line by line
-    public void addDrive() - adds drives to the array list in proper format
-    public boolean isMade() - checks whether or not the hard drive inputted by the user has already been made
-
-    public String getUuid() - getter methods for the variables
-    public String getName()
-    public String getSize()
+Data {
+- Contains the uuid and name for all other classes
 }
 
+HardDrives {
+- Extends Data
+- Private variables for all the hard drives currently made and the size of each
+- Constructor to instantiate the name, uuid, and size of the hard drive
+- getSize() and getDrives() methods
+- toString() method in proper format
+}
 
 PhysicalVolumes {
+- Extends Data
+- HardDrive variable to keep track of the hard drive that is used for each physical volume, and size variable
+- Constructor to instantiate the name, uuid, the hard drive, and the size
+- getSize() and getDrive() methods
+- toString() method in proper format
 }
 
 VolumeGroups {
+- Extends Data
+- Variables to keep track of what physical volumes are used, and what logical volumes are made using which volume groups
+- Constructor to instantiate the name, uuid, and what physical volumes are in the volume group
+- getPvs() and getLvs() methods
+- addPv() and addLv() methods to add them after instantiation
+- space() method to calculate total space in a volume group
+- spaceLeft() method to calculate how much space is left in a volume group
+- toString() method in proper format
 }
 
 LogicalVolumes {
+- Extends Data
+- Size variable and variable for the name of the volume group (vg1, vg2, etc.)
+- Constructor to instantiate name, uuid, size, and the volume group
+- getSize() and getVolumeGroup() methods
+- toString() method in proper format
 }
